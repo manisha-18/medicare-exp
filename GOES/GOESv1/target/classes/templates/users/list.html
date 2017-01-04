@@ -1,0 +1,32 @@
+<a class="btn btn-primary" href="/users/new">Add new user</a>
+
+    <table class="table table-striped" id="users_list">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>            
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="user : ${users}">
+        	<td data-th-text="${user.id}"></td>
+            <td data-th-text="${user.name}"></td>
+            <td data-th-text="${user.email}"></td>
+            <td>
+                <a th:href="@{'/users/{id}/delete'(id=${user.id})}" th:attr="name=${user.name}">
+                        <span class="fa-stack">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </span>
+                </a>
+            </td>
+
+            <td>
+                <a th:href="@{'/users/{id}/edit'(id=${user.id})}" th:attr="name=${user.name}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
