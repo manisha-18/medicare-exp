@@ -1,0 +1,5 @@
+mongodb cursor object to jsonarray conversion to return to as a response of RestAPI
+
+follow this link code:
+
+http://stackoverflow.com/questions/29986378/convert-dbcursor-object-into-json
