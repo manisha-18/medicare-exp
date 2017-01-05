@@ -3,3 +3,8 @@ mongodb cursor object to jsonarray conversion to return to as a response of Rest
 follow this link code:
 
 http://stackoverflow.com/questions/29986378/convert-dbcursor-object-into-json
+
+
+
+json to db object
+https://www.mkyong.com/mongodb/java-mongodb-convert-json-data-to-dbobject/
