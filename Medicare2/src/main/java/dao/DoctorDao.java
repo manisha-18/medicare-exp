@@ -42,26 +42,26 @@ DB db;
 	}
 	
 	
-	public String getAllDoctors(){
+	public JSONArray getAllDoctors(){
 		
-		JSONArray jsonarray=new JSONArray();
-		JSONObject jsonobj=new JSONObject();
+		MongoClient mongoc=new MongoClient("localhost", 27017);
+		DB db=mongoc.getDB("test");
+		DBCollection coll=db.getCollection("myCollection");
 		
-		/*
-		myCollection=db.getCollection("myCollection");
+		DBCursor cursor = coll.find();
 		
-		DBCursor cursor=myCollection.find();
+		JSONArray jsonarrray=new JSONArray();
 		
-		while(cursor.hasNext()){
-			BasicDBObject boj=(BasicDBObject) cursor.next();
-			jsonobj.put("id",boj.getString("id"));
-			jsonobj.put("name",boj.getString("name"));
-
-		}
-		jsonarray.add(jsonobj);
-	*/
+        while (cursor.hasNext()) { 
+        BasicDBObject bobj=(BasicDBObject) cursor.next();
+        JSONObject jobj=new JSONObject();
+           jobj.put("id",bobj.get("id"));
+           jobj.put("name",bobj.get("name"));
+           
+           jsonarrray.add(jobj);
+        }
 		
-		return "hello";
+		return jsonarrray;
 		
 	}
 	

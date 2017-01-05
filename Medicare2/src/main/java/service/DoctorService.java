@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -30,7 +31,7 @@ public class DoctorService {
 	}
 	
 	
-	public String getAllDoctors(){
+	public JSONArray getAllDoctors(){
 		
 		return doctorDao.getAllDoctors();
 		

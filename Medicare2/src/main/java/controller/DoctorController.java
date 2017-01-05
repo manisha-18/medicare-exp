@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mongodb.DBCursor;
+
 import model.Doctor;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
@@ -32,7 +34,7 @@ public class DoctorController {
 	
 	@RequestMapping(value="/doctors",method=RequestMethod.GET)
 	@ResponseBody
-	public String getAllDoctors(){
+	public JSONArray getAllDoctors(){
 		
 		return doctorService.getAllDoctors();
 		
